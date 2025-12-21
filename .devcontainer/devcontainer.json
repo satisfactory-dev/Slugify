@@ -1,9 +1,9 @@
 {
-	"name": "nodejs template",
+	"name": "@satisfactory-dev/slugify",
 	"dockerComposeFile": "./docker-compose.yml",
 	"service": "devcontainer",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"postCreateCommand": "npm config set git-tag-version=false && npm install && echo \"source ./.devcontainer/.post-create\" >> /home/node/.bashrc",
+	"postCreateCommand": "npm config set git-tag-version=false && npm install && echo \"source ./.devcontainer/.post-create\" >> /home/vscode/.bashrc",
 	"remoteUser": "vscode",
 	"updateRemoteUserUID": true,
 	"customizations": {
