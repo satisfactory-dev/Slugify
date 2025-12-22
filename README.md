@@ -1,3 +1,6 @@
+[![Coverage Status](https://coveralls.io/repos/github/satisfactory-dev/Slugify/badge.svg?branch=main)](https://coveralls.io/github/satisfactory-dev/Slugify?branch=main)
+[![Workflow Status](https://github.com/satisfactory-dev/Slugify/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/satisfactory-dev/Slugify/actions/workflows/node.js.yml?query=branch%3Amain)
+
 # Slugify
 
 A partially-manual, partially-code-generated port of [cocur/slugify](https://github.com/cocur/slugify)
