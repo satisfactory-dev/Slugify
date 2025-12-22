@@ -41,3 +41,4 @@ issues with `cocur/slugify`.
 - Only the rules/rulesets methods/options are implemented.
 - The default rulesets are generated at build time using TypeScript's factory methods.
 - Tests for testing `\\Cocur\\Slugify::slugify()` will be partially generated at build time.
+- `Slugify::slugify()` is async, to provide for the possibilty of async-sourced rulesets.
