@@ -1,3 +1,8 @@
+/**
+ * This file contains manually-written type
+ * definitions for third-party dependencies
+ */
+
 // better type definitions for locutus
 
 declare module 'locutus/php/strings/strtr.js' {

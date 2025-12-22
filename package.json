@@ -27,6 +27,7 @@
     "index.js",
     "index.d.ts",
     "src/**/*.js",
+    "!src/types.js",
     "src/**/*.d.ts",
     "generated-src/**/*.js",
     "generated-src/**/*.d.ts"

@@ -5,5 +5,8 @@
 		"./tests/*/*.ts",
 		"./*.ts",
 		"./generated-src/*.ts"
+	],
+	"exclude": [
+		"./**/*.d.ts"
 	]
 }
