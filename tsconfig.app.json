@@ -1,4 +1,9 @@
 {
 	"extends": "./tsconfig",
-	"include": ["./src/**/*.ts", "./index.ts", "./generated-src/*.ts", "./utilities/**/*.ts"]
+	"include": [
+		"./src/**/*.ts",
+		"./index.ts",
+		"./generated-src/*.ts",
+		"./utilities/**/*.ts"
+	]
 }
