@@ -5,11 +5,9 @@ import {
 	run,
 } from 'node:test';
 
-/*
 import {
 	glob,
 } from 'fs/promises';
-*/
 
 const ac = new AbortController();
 
@@ -17,13 +15,11 @@ let already_stopped = false;
 
 const files: string[] = [];
 
-// const glob_path = `${__dirname}/tests/**/*.spec.ts`;
+const glob_path = `${import.meta.dirname}/tests/**/*.spec.ts`;
 
-/*
 for await(const filepath of glob(glob_path)) {
 	files.push(filepath);
 }
-*/
 
 run({
 	files,

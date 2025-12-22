@@ -1,7 +1,15 @@
 install:
 	@npm install
 
-build:
+generate:
+	@echo 'generating rulesets'
+	@node ./generate-rulesets.ts
+	@echo 'generating data providers'
+	@node ./generate-data-providers.ts
+	@echo 'applying eslint to generated files'
+	@./node_modules/.bin/eslint --fix ./generated-src/*.ts ./tests/generated/*.ts
+
+build: generate
 	@echo 'building from ./tsconfig.app.json'
 	@./node_modules/.bin/tsc --project ./tsconfig.app.json
 

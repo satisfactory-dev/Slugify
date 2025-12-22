@@ -4,3 +4,5 @@
 /**/*.map
 /.eslintcache
 /coverage/
+/generated-src/
+/tests/generated/

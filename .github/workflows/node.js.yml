@@ -17,6 +17,9 @@ jobs:
                   node-version: 24.x
                   cache: 'npm'
             - run: npm ci
+            - run: node ./generate-rulesets.ts
+            - run: node ./generate-data-providers.ts
+            - run: ./node_modules/.bin/eslint --fix ./generated-src/*.ts ./tests/generated/*.ts
             - run: ./node_modules/.bin/tsc --project ./tsconfig.app-check.json
             - run: ./node_modules/.bin/prettier . --check
             - run: ./node_modules/.bin/eslint --config eslint.config.js.mjs './**/*.mjs'
@@ -33,6 +36,9 @@ jobs:
                   node-version: 24.x
                   cache: 'npm'
             - run: npm ci
+            - run: node ./generate-rulesets.ts
+            - run: node ./generate-data-providers.ts
+            - run: ./node_modules/.bin/eslint --fix ./generated-src/*.ts ./tests/generated/*.ts
             - name: Generate coverage
               run: ./node_modules/.bin/c8 --config=./.c8rc.coveralls.json node ./tests.ts
             - name: Coveralls GitHub Action
