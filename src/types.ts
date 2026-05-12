@@ -30,6 +30,7 @@ declare module 'php-parser/src/ast/array.js' {
 	import Expression from 'php-parser/src/ast/expression.js';
 	import type Variable from 'php-parser/src/ast/variable.js';
 
+	// oxlint-disable-next-line no-redeclare
 	class Array<
 		Items extends unknown[] = (
 			| Entry
@@ -214,6 +215,7 @@ declare module 'php-parser/src/ast/function.js' {
 	import type Identifier from 'php-parser/src/ast/identifier.js';
 	import type Parameter from 'php-parser/src/ast/parameter.js';
 
+	// oxlint-disable-next-line no-redeclare
 	class Function<
 		Kind extends string = 'function',
 		Name extends string = string,
@@ -277,6 +279,8 @@ declare module 'php-parser/src/ast/literal.js' {
 }
 
 declare module 'php-parser/src/ast/method.js' {
+
+	// oxlint-disable-next-line no-redeclare
 	import Function from 'php-parser/src/ast/function.js';
 
 	class Method<
@@ -308,7 +312,7 @@ declare module 'php-parser/src/ast/name.js' {
 }
 
 declare module 'php-parser/src/ast/namespace.js' {
-	import type Block from 'php-parser/src/ast/block.js';
+	import Block from 'php-parser/src/ast/block.js';
 
 	class Namespace<
 		Name extends string = string,
@@ -350,6 +354,7 @@ declare module 'php-parser/src/ast/node.js' {
 declare module 'php-parser/src/ast/number.js' {
 	import Literal from 'php-parser/src/ast/literal.js';
 
+	// oxlint-disable-next-line no-redeclare
 	class Number<
 		Value extends number = number,
 	> extends Literal<'number', Value> {
@@ -467,7 +472,7 @@ declare module 'php-parser/src/ast/return.js' {
 }
 
 declare module 'php-parser/src/ast/statement.js' {
-	import type Node from 'php-parser/src/ast/node.js';
+	import Node from 'php-parser/src/ast/node.js';
 
 	class Statement<
 		Kind extends string = 'statement',
@@ -480,6 +485,7 @@ declare module 'php-parser/src/ast/statement.js' {
 declare module 'php-parser/src/ast/string.js' {
 	import Literal from 'php-parser/src/ast/literal.js';
 
+	// oxlint-disable-next-line no-redeclare
 	class String<
 		Value extends string = string,
 	> extends Literal<'string', Value> {
