@@ -333,7 +333,7 @@ const source_file = createSourceFile(
 
 const stream = createWriteStream(filepath);
 
-stream.write('/* eslint-disable @stylistic/max-len */');
+stream.write('/* oxlint-disable @stylistic/max-len */');
 stream.write('\n\n');
 stream.write(printer.printNode(
 	EmitHint.Unspecified,

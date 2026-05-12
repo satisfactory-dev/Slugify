@@ -21,11 +21,8 @@ jobs:
             - run: npm ci
             - run: node ./generate-rulesets.ts
             - run: node ./generate-data-providers.ts
-            - run: ./node_modules/.bin/eslint --fix ./generated-src/*.ts ./tests/generated/*.ts
-            - run: ./node_modules/.bin/tsc --project ./tsconfig.app-check.json
-            - run: ./node_modules/.bin/prettier . --check
-            - run: ./node_modules/.bin/eslint --config eslint.config.js.mjs './**/*.mjs'
-            - run: ./node_modules/.bin/eslint --cache './**/*.ts'
+            - run: ./node_modules/.bin/oxlint --fix ./generated-src/*.ts ./tests/generated/*.ts
+            - run: make lint
     coverage:
         if: github.event.repository.visibility == 'public'
         needs: basic-checks
@@ -42,7 +39,7 @@ jobs:
             - run: npm ci
             - run: node ./generate-rulesets.ts
             - run: node ./generate-data-providers.ts
-            - run: ./node_modules/.bin/eslint --fix ./generated-src/*.ts ./tests/generated/*.ts
+            - run: ./node_modules/.bin/oxlint --fix ./generated-src/*.ts ./tests/generated/*.ts
             - name: Generate coverage
               run: make coverage--lcov
             - name: Coveralls GitHub Action

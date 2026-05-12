@@ -2,7 +2,6 @@
 /**/*.js
 /**/*.d.ts
 /**/*.map
-/.eslintcache
 /coverage/
 /generated-src/
 /tests/generated/

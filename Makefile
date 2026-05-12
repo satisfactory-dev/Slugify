@@ -6,8 +6,8 @@ generate:
 	@node ./generate-rulesets.ts
 	@echo 'generating data providers'
 	@node ./generate-data-providers.ts
-	@echo 'applying eslint to generated files'
-	@./node_modules/.bin/eslint --fix ./generated-src/*.ts ./tests/generated/*.ts
+	@echo 'applying oxlint to generated files'
+	@./node_modules/.bin/oxlint --fix ./generated-src/*.ts ./tests/generated/*.ts
 
 build: generate
 	@echo 'building from ./tsconfig.app.json'
@@ -21,14 +21,11 @@ lint--prettier:
 	@echo 'running prettier'
 	@./node_modules/.bin/prettier . --check
 
-lint--eslint:
-	@./node_modules/.bin/tsc --project ./tsconfig.eslint.json
-	@echo 'checking eslint for all issues with config'
-	@./node_modules/.bin/eslint --config eslint.config.js.mjs --cache './**/*.mjs'
-	@echo 'checking eslint for all issues'
-	@./node_modules/.bin/eslint --cache './**/*.ts'
+lint--oxlint:
+	@echo 'checking oxlint for all issues'
+	@./node_modules/.bin/oxlint
 
-lint: lint--prettier lint--tsc lint--eslint
+lint: lint--prettier lint--tsc lint--oxlint
 
 .PHONY: tests
 tests: build
