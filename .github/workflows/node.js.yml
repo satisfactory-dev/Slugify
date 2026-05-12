@@ -35,9 +35,7 @@ jobs:
                   node-version: 25.x
                   cache: 'npm'
             - run: npm ci
-            - run: node ./generate-rulesets.ts
-            - run: node ./generate-data-providers.ts
-            - run: ./node_modules/.bin/oxlint --fix ./generated-src/*.ts ./tests/generated/*.ts
+            - run: make generate
             - name: Generate coverage
               run: make coverage--lcov
             - name: Coveralls GitHub Action
