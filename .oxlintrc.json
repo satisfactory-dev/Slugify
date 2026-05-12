@@ -24,6 +24,7 @@
 	"options": {
 		"typeAware": true
 	},
+	"ignorePatterns": ["**/*.d.ts"],
 	"overrides": [
 		{
 			"files": ["./**/*.ts"]
