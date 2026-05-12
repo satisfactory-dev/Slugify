@@ -42,7 +42,9 @@
     "typescript": "~5.9.2"
   },
   "dependencies": {
-    "@types/regexp.escape": "^2.0.0",
     "locutus": "^2.0.32"
+  },
+  "peerDependencies": {
+    "@types/regexp.escape": "^2.0.0"
   }
 }
