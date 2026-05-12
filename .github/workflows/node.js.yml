@@ -19,9 +19,7 @@ jobs:
                   node-version: 25.x
                   cache: 'npm'
             - run: npm ci
-            - run: node ./generate-rulesets.ts
-            - run: node ./generate-data-providers.ts
-            - run: ./node_modules/.bin/oxlint --fix ./generated-src/*.ts ./tests/generated/*.ts
+            - run: make generate
             - run: make lint
     coverage:
         if: github.event.repository.visibility == 'public'
