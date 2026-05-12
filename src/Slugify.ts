@@ -1,7 +1,9 @@
 import type {
 } from 'regexp.escape/auto';
 
-import strtr from 'locutus/php/strings/strtr.js';
+import {
+	php,
+} from 'locutus';
 
 import {
 	DefaultRuleProvider,
@@ -66,7 +68,7 @@ export class Slugify {
 
 		let result = value;
 
-		result = strtr(result, this.#rules);
+		result = php.strings.strtr(result, this.#rules);
 
 		result = result.toLowerCase();
 

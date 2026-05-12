@@ -3,22 +3,6 @@
  * definitions for third-party dependencies
  */
 
-// better type definitions for locutus
-
-declare module 'locutus/php/strings/strtr.js' {
-	function strtr(
-		value: string,
-		trFrom: {[key: string]: string},
-	): string;
-	function strtr(
-		value: string,
-		trFrom: string,
-		trTo: string,
-	): string;
-
-	export = strtr;
-}
-
 // better type definitions for php-parser
 // incomplete, just implementing what's needed internally
 // original license BSD-3 Clause
