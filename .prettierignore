@@ -5,3 +5,4 @@ LICENSE.md
 **/*.js
 **/*.mjs
 /slugify/
+/.devcontainer/devcontainer-lock.json
