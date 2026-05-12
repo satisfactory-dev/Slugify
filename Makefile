@@ -7,7 +7,11 @@ generate:
 	@echo 'generating data providers'
 	@node ./generate-data-providers.ts
 	@echo 'applying oxlint to generated files'
+	@make -i fix--generated && make -i fix--generated && make -i fix--generated
 	@./node_modules/.bin/oxlint --fix ./generated-src/*.ts ./tests/generated/*.ts
+
+fix--generated:
+	@./node_modules/.bin/oxlint --quiet --silent --fix ./generated-src/*.ts ./tests/generated/*.ts
 
 build: generate
 	@echo 'building from ./tsconfig.app.json'
