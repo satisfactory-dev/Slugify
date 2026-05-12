@@ -44,7 +44,7 @@ jobs:
             - run: node ./generate-data-providers.ts
             - run: ./node_modules/.bin/eslint --fix ./generated-src/*.ts ./tests/generated/*.ts
             - name: Generate coverage
-              run: ./node_modules/.bin/c8 --config=./.c8rc.coveralls.json node ./tests.ts
+              run: make coverage--lcov
             - name: Coveralls GitHub Action
               uses: coverallsapp/github-action@v2.2.3
               with:

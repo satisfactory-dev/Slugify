@@ -35,8 +35,14 @@ tests: build
 	@node ./tests.ts
 
 .PHONY: coverage
-coverage: build
-	@./node_modules/.bin/c8 node ./tests.ts
+coverage: lint coverage--skip-lint
+
+coverage--skip-lint:
+	@node --experimental-test-coverage --test-coverage-include='${PWD}/src/**/*.ts' --test
+
+coverage--lcov:
+	@node --experimental-test-coverage --test-coverage-include='${PWD}/src/**/*.ts' --test --test-reporter=lcov --test-reporter-destination=coverage/lcov.info
+
 
 npm-prep: tests
 	@echo 'building from ./tsconfig.app-npm.json'
